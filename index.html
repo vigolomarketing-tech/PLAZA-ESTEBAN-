@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#111111" />
+
+  <title>Plaza Esteban · Pizza, Café y Restaurante en Adrogué</title>
+  <meta name="description" content="Plaza Esteban — bar, pizzería y cafetería en Adrogué. Carta digital, pedidos por WhatsApp para comer en el local, delivery o retiro. Plaza Esteban Adrogué 31, Adrogué." />
+  <link rel="canonical" href="./" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="restaurant" />
+  <meta property="og:title" content="Plaza Esteban · Pizza, Café y Restaurante en Adrogué" />
+  <meta property="og:description" content="Carta digital y pedidos por WhatsApp. Pizzas, empanadas, minutas, desayunos y meriendas en Adrogué." />
+  <meta property="og:image" content="./assets/og-image.svg" />
+  <meta property="og:locale" content="es_AR" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="./assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./style.css" />
+
+  <!-- SEO: Datos estructurados schema.org Restaurant -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Plaza Esteban",
+    "servesCuisine": ["Pizza", "Café", "Argentina"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Plaza Esteban Adrogué 31",
+      "addressLocality": "Adrogué",
+      "addressRegion": "Buenos Aires",
+      "addressCountry": "AR"
+    },
+    "telephone": "+5491158242046",
+    "priceRange": "$$",
+    "acceptsReservations": "True",
+    "sameAs": ["https://www.instagram.com/plazaestebanadrogue"]
+  }
+  </script>
+</head>
+<body>
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="Plaza Esteban - Inicio">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="./assets/logo.svg" alt="" width="34" height="34" />
+        </span>
+        <span class="brand-text">Plaza <em>Esteban</em></span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <a href="#top">Inicio</a>
+        <a href="#carta">Carta</a>
+        <a href="#promociones">Promociones</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-primary btn-pedir" data-scroll="#carta">Pedir ahora</button>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-backdrop" id="navBackdrop" hidden></div>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero" aria-label="Presentación">
+      <div class="hero-media" role="img" aria-label="Frente del restaurante Plaza Esteban en Adrogué"></div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="hero-eyebrow">Pizza · Café · Restaurante</p>
+        <h1 class="hero-title">Plaza <span>Esteban</span></h1>
+        <p class="hero-sub">Tu lugar para comer bien en Adrogué.</p>
+        <div class="hero-cta">
+          <button class="btn btn-primary btn-lg" data-scroll="#carta">Ver carta</button>
+          <button class="btn btn-ghost btn-lg" data-scroll="#acceso">Hacer un pedido</button>
+        </div>
+        <ul class="hero-facts">
+          <li><span aria-hidden="true">📍</span> Plaza Esteban Adrogué 31, Adrogué</li>
+          <li><span aria-hidden="true">💬</span> WhatsApp 11 5824-2046</li>
+          <li class="hero-status" id="heroStatus" data-status>Consultá disponibilidad por WhatsApp</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============== BANNER MESA (QR) ============== -->
+    <div class="mesa-banner" id="mesaBanner" hidden>
+      <div class="container">
+        Estás pidiendo desde la <strong id="mesaBannerNum">Mesa</strong> · modalidad
+        <strong>Comer en el local</strong>
+        <button class="mesa-clear" id="mesaClear" aria-label="Quitar mesa">✕</button>
+      </div>
+    </div>
+
+    <!-- ================= ACCESO RÁPIDO ================= -->
+    <section class="section access" id="acceso" aria-labelledby="acceso-title">
+      <div class="container">
+        <h2 class="section-title" id="acceso-title">¿Cómo querés pedir?</h2>
+        <p class="section-lead">Elegí una opción y armá tu pedido en minutos.</p>
+        <div class="access-grid">
+          <button class="access-card" data-mode="local">
+            <span class="access-icon" aria-hidden="true">🍽️</span>
+            <h3>Comer en el local</h3>
+            <p>Escaneá el QR de tu mesa, armá tu pedido y envialo.</p>
+            <span class="access-link">Empezar →</span>
+          </button>
+          <button class="access-card" data-mode="delivery">
+            <span class="access-icon" aria-hidden="true">🛵</span>
+            <h3>Pedir delivery</h3>
+            <p>Elegí tus productos, cargá tu dirección y envianos el pedido.</p>
+            <span class="access-link">Empezar →</span>
+          </button>
+          <button class="access-card" data-mode="retiro">
+            <span class="access-icon" aria-hidden="true">🛍️</span>
+            <h3>Pedir para retirar</h3>
+            <p>Pedí online y retiralo cuando esté listo.</p>
+            <span class="access-link">Empezar →</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROMOCIONES ================= -->
+    <section class="section section-dark promos" id="promociones" aria-labelledby="promos-title">
+      <div class="container">
+        <h2 class="section-title" id="promos-title">Promociones</h2>
+        <p class="section-lead">Beneficios y combos de Plaza Esteban.</p>
+        <div class="promos-grid" id="promosGrid"><!-- render JS --></div>
+      </div>
+    </section>
+
+    <!-- ================= CARTA ================= -->
+    <section class="section carta" id="carta" aria-labelledby="carta-title">
+      <div class="container">
+        <h2 class="section-title" id="carta-title">Carta digital</h2>
+        <p class="section-lead">Tocá un producto para agregarlo a tu pedido.</p>
+
+        <div class="carta-search">
+          <label for="searchInput" class="visually-hidden">Buscar productos</label>
+          <span class="search-icon" aria-hidden="true">🔎</span>
+          <input type="search" id="searchInput" placeholder="Buscar en la carta (pizza, café, empanadas…)" autocomplete="off" />
+          <button class="search-clear" id="searchClear" aria-label="Limpiar búsqueda" hidden>✕</button>
+        </div>
+      </div>
+
+      <!-- Barra de categorías sticky -->
+      <div class="cat-bar" id="catBar" aria-label="Categorías de la carta">
+        <div class="cat-bar-scroll" id="catBarScroll" role="tablist"><!-- render JS --></div>
+      </div>
+
+      <div class="container">
+        <div class="menu-wrap" id="menuWrap"><!-- render JS --></div>
+        <p class="no-results" id="noResults" hidden>No encontramos productos para tu búsqueda.</p>
+        <p class="price-note">Los precios pueden variar. Ante cualquier duda, consultanos por WhatsApp.</p>
+      </div>
+    </section>
+
+    <!-- ================= NOSOTROS ================= -->
+    <section class="section section-soft nosotros" id="nosotros" aria-labelledby="nos-title">
+      <div class="container nosotros-inner">
+        <div class="nosotros-text">
+          <h2 class="section-title" id="nos-title">Sobre Plaza Esteban</h2>
+          <p>Plaza Esteban es un punto gastronómico de Adrogué para todos los momentos del día:
+             desayunos y meriendas, pizzas, empanadas, minutas, comidas y encuentros.</p>
+          <p>Un bar–restaurante y pizzería con estilo clásico, ideal para venir con familia
+             o amigos, ver los partidos o simplemente tomar un buen café.</p>
+          <ul class="nosotros-tags">
+            <li>Pizzas &amp; Empanadas</li>
+            <li>Minutas</li>
+            <li>Desayunos &amp; Meriendas</li>
+            <li>Cafetería</li>
+          </ul>
+        </div>
+        <div class="nosotros-media" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- ================= INSTAGRAM ================= -->
+    <section class="section instagram" aria-labelledby="ig-title">
+      <div class="container">
+        <h2 class="section-title" id="ig-title">Seguinos en Instagram</h2>
+        <p class="section-lead"><a href="#" id="igHandle" target="_blank" rel="noopener">@plazaestebanadrogue</a></p>
+        <div class="ig-grid" id="igGrid"><!-- render JS --></div>
+        <div class="center">
+          <a class="btn btn-outline" id="igBtn" target="_blank" rel="noopener">Ver perfil en Instagram</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= UBICACIÓN ================= -->
+    <section class="section section-dark ubicacion" id="ubicacion" aria-labelledby="ubi-title">
+      <div class="container ubicacion-inner">
+        <div>
+          <h2 class="section-title" id="ubi-title">Ubicación</h2>
+          <p class="ubicacion-addr">
+            <strong>Plaza Esteban Adrogué 31</strong><br />
+            Adrogué, Buenos Aires
+          </p>
+          <div class="ubicacion-btns">
+            <a class="btn btn-primary" id="mapsBtn" target="_blank" rel="noopener">Cómo llegar</a>
+            <a class="btn btn-outline-light" id="waUbiBtn" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-outline-light" id="igUbiBtn" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+        <div class="map-embed">
+          <iframe
+            title="Mapa de Plaza Esteban en Adrogué"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://maps.google.com/maps?q=Plaza%20Esteban%20Adrogu%C3%A9%2031%2C%20Adrogu%C3%A9%2C%20Buenos%20Aires&output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER / CONTACTO ================= -->
+  <footer class="site-footer" id="contacto">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand brand-footer">
+          <span class="brand-text">Plaza <em>Esteban</em></span>
+        </div>
+        <p class="footer-tagline">Pizza · Café · Restaurante en Adrogué.</p>
+      </div>
+      <div>
+        <h3>Contacto</h3>
+        <ul class="footer-list">
+          <li><a id="waFooter" target="_blank" rel="noopener">WhatsApp +54 9 11 5824-2046</a></li>
+          <li><a id="igFooter" target="_blank" rel="noopener">Instagram @plazaestebanadrogue</a></li>
+          <li>Plaza Esteban Adrogué 31, Adrogué</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Navegación</h3>
+        <ul class="footer-list">
+          <li><a href="#carta">Carta</a></li>
+          <li><a href="#promociones">Promociones</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#ubicacion">Ubicación</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> Plaza Esteban · Adrogué. Todos los derechos reservados.</p>
+      <p class="footer-credit">Carta digital &amp; pedidos online.</p>
+    </div>
+  </footer>
+
+  <!-- ================= BOTÓN FLOTANTE CARRITO ================= -->
+  <button class="cart-fab" id="cartFab" aria-label="Abrir pedido">
+    <span class="cart-fab-icon" aria-hidden="true">🛒</span>
+    <span class="cart-fab-count" id="cartFabCount" hidden>0</span>
+    <span class="cart-fab-total" id="cartFabTotal">Ver pedido</span>
+  </button>
+
+  <!-- ================= DRAWER / CARRITO ================= -->
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Tu pedido" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="cart-head">
+      <h2>Tu pedido</h2>
+      <button class="icon-btn" id="cartClose" aria-label="Cerrar pedido">✕</button>
+    </div>
+    <div class="cart-body" id="cartBody"><!-- render JS --></div>
+    <div class="cart-foot" id="cartFoot">
+      <div class="cart-total-row">
+        <span>Total productos</span>
+        <strong id="cartTotal">$0</strong>
+      </div>
+      <button class="btn btn-outline btn-block" id="cartClear">Vaciar carrito</button>
+      <button class="btn btn-primary btn-block" id="cartCheckout">Finalizar pedido</button>
+    </div>
+  </aside>
+
+  <!-- ================= MODAL VARIANTES ================= -->
+  <div class="modal-backdrop" id="variantBackdrop" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="variantTitle">
+      <div class="modal-head">
+        <h3 id="variantTitle">Elegí una opción</h3>
+        <button class="icon-btn" id="variantClose" aria-label="Cerrar">✕</button>
+      </div>
+      <div class="modal-body" id="variantBody"><!-- render JS --></div>
+      <div class="modal-foot">
+        <button class="btn btn-primary btn-block" id="variantAdd">Agregar al pedido</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL CHECKOUT ================= -->
+  <div class="modal-backdrop" id="checkoutBackdrop" hidden>
+    <div class="modal modal-lg" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+      <div class="modal-head">
+        <h3 id="checkoutTitle">Finalizar pedido</h3>
+        <button class="icon-btn" id="checkoutClose" aria-label="Cerrar">✕</button>
+      </div>
+      <div class="modal-body" id="checkoutBody"><!-- render JS --></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="./menu.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

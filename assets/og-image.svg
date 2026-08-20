@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#232323"/>
+      <stop offset="1" stop-color="#0e0e0e"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="85%" cy="10%" r="60%">
+      <stop offset="0" stop-color="#d81f26" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#d81f26" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <g transform="translate(90,150)">
+    <rect x="0" y="0" width="14" height="4" fill="#d81f26"/>
+    <text x="26" y="8" font-family="Poppins,Arial,sans-serif" font-size="26" letter-spacing="8" fill="#ffffff" opacity="0.9">PIZZA · CAFÉ · RESTAURANTE</text>
+    <text x="-4" y="120" font-family="Georgia,serif" font-weight="900" font-size="150" fill="#ffffff">Plaza <tspan fill="#d81f26">Esteban</tspan></text>
+    <text x="0" y="200" font-family="Poppins,Arial,sans-serif" font-size="40" fill="#eaeaea">Tu lugar para comer bien en Adrogué.</text>
+    <text x="0" y="290" font-family="Poppins,Arial,sans-serif" font-size="30" fill="#b9b9b9">📍 Plaza Esteban Adrogué 31 · Adrogué · WhatsApp 11 5824-2046</text>
+  </g>
+</svg>
